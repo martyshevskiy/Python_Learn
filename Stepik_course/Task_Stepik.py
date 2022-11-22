@@ -4,15 +4,32 @@
 # находящий на противоположном конце этого списка. Например, если на вход подаётся список "1 3 5 6 10",
 # то на выход ожидается список "13 6 9 15 7" (без кавычек).
 
-list = [int(i) for i in input().split()]
-if len(list) == 1:
-    print(list[0])
-else:
-    for i in range(len(list)):
-        if i == 0:
-            print((list[1] + list[-1]), end=' ')
-        elif i == len(list) - 1:
-            print((list[i - 1] + list[0]))
-        else:
-            print((list[i - 1] + list[i + 1]), end=' ')
+# list = [int(i) for i in input().split()]
+# if len(list) == 1:
+#     print(list[0])
+# else:
+#     for i in range(len(list)):
+#         if i == 0:
+#             print((list[1] + list[-1]), end=' ')
+#         elif i == len(list) - 1:
+#             print((list[i - 1] + list[0]))
+#         else:
+#             print((list[i - 1] + list[i + 1]), end=' ')
+# ---------------------------------------------------------
+
+# Напишите программу, которая принимает на вход список чисел в одной строке и
+# выводит на экран в одну строку значения, которые встречаются в нём более одного раза.
+
+# list = [int(i) for i in input().split()]
+# list.sort()
+# a = None
+# newlist = []
+# for i in list:
+#     if i != a:
+#         a = i
+#     elif a == i and a not in newlist:
+#         newlist.append(i)
+# print(*newlist)
+
+
 
