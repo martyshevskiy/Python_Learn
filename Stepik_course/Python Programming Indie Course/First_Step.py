@@ -60,4 +60,15 @@
 # print(hour,':', minute // 10, minute % 10, ':', sec // 10, sec % 10, sep='')
 # ----------------------------------
 
+# Необходимо вывести True, если данные стороны образуют прямоугольный треугольник,
+# в противном случае - False.
+
+# a, b, c = map(int, input().split())
+# gip = max(a, b, c)
+# min_katet = min(a, b, c)
+# other_katet = (a + b + c) - (min(a,b,c) + max(a,b,c))
+# print(gip**2 == min_katet**2 + other_katet**2)
+# ----------------------------------
+
+
 
