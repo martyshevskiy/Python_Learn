@@ -631,7 +631,7 @@ P.S. не пользуйтесь встроенной функцией sorted и
 #         break
 # print('Yes' if flag else 'No')
 
-
+'''-------------------------------------'''
 
 '''В метании молота состязается n спортcменов. Каждый из них сделал m бросков. 
 Победителем считается тот спортсмен, у которого сумма результатов по всем броскам максимальна.
@@ -640,13 +640,248 @@ P.S. не пользуйтесь встроенной функцией sorted и
 Программа должна определить максимальную сумму чисел в одной строке и вывести на экран эту сумму и 
 номер строки, для которой достигается эта сумма.'''
 
-spotsmens, throws = map(int, input().split())
-point = []
-for i in range(throws):
-    a = []
-    for j in range(spotsmens):
-        a.append((int, input().split()))
-    point.append(a)
+# line, column = map(int, input().split())
+# point = []
+# summa = 0
+# line_number = 0
+# temporary_amount = 0
+# counter = 0
+#
+# for i in range(line):
+#     point.append(list(map(int, input().split())))
+#
+# for index_line in range(line):
+#     for index_elem in range(column):
+#         counter += point[index_line][index_elem]
+#     if counter >= temporary_amount:
+#         summa = counter
+#         temporary_amount = counter
+#         line_number = index_line
+#     else:
+#         summa = temporary_amount
+#     counter = 0
+#
+# print(summa)
+# print(line_number)
 
-print(point)
+'''-------------------------------------'''
+
+'''В метании молота состязается n спортcменов. 
+Каждый из них сделал m бросков. 
+Победителем соревнований объявляется тот спортсмен, у которого максимален наилучший результат по всем броскам. 
+Таким образом, программа должна найти значение максимального элемента в данном массиве, а также его индексы (то есть номер спортсмена и номер попытки).'''
+
+# line, column = map(int, input().split())
+# point = []
+# max_point = 0
+# index_column = 0
+# index_line = 0
+#
+ #for i in range(line):
+#     point.append(list(map(int, input().split())))
+#
+# for line_index in range(line):
+#     for elem_index in range(column):
+#         if point[line_index][elem_index] > max_point:
+#             max_point = point[line_index][elem_index]
+#             index_column = elem_index
+#             index_line = line_index
+#
+#
+# print(max_point)
+# print(index_line, index_column)
+
+'''-------------------------------------'''
+
+'''В метании молота состязается n спортcменов. 
+Каждый из них сделал m бросков. Побеждает спортсмен, у которого максимален наилучший бросок. 
+Если таких несколько, то из них побеждает тот, у которого наилучшая сумма результатов по всем попыткам. 
+Если и таких несколько, победителем считается спортсмен с минимальным номером. Определите номер победителя соревнований.'''
+
+# line, column = map(int, input().split())
+# point = []
+# summa = 0
+# max_point = 0
+# line_number = 0
+# for i in range(line):
+#     point.append(list(map(int, input().split())))
+#
+# for index_line in range(line):
+#     max_score = 0
+#     max_summa = 0
+#     for index_elem in range(column):
+#         max_summa += point[index_line][index_elem]
+#         if point[index_line][index_elem] > max_score:
+#             max_score = point[index_line][index_elem]
+#     if max_score > max_point:
+#         max_point = max_score
+#         summa = max_summa
+#         line_number = index_line
+#     elif max_score == max_point and max_summa > summa:
+#         max_point = max_score
+#         summa = max_summa
+#         line_number = index_line
+# print(line_number)
+
+'''-------------------------------------'''
+
+'''В метании молота состязается n спортcменов. 
+Каждый из них сделал m бросков. 
+Победитель определяется по лучшему результату. 
+Определите количество участников состязаний, которые разделили первое место, 
+то есть определите количество строк в массиве, которые содержат значение, равное наибольшему.'''
+
+# line, column = map(int, input().split())
+# point = []
+# max_point = 0
+# counter = 0
+#
+# for i in range(line):
+#     point.append(list(map(int, input().split())))
+#
+# for index_line in range(line):
+#     score = 0
+#     for index_elem in range(column):
+#         if point[index_line][index_elem] > score:
+#             score = point[index_line][index_elem]
+#     if score > max_point:
+#         max_point = score
+#         counter = 1
+#     elif score == max_point:
+#         counter += 1
+# print(counter)
+
+'''-------------------------------------'''
+
+'''На днях Иван у себя в прихожей выложил кафель, состоящий из квадратных черных и белых плиток. 
+Прихожая Ивана имеет квадратную форму 4х4, вмещающую 16 плиток. 
+Теперь Иван переживает, что узор из плиток, который у него получился, может быть не симпатичным. 
+С точки зрения дизайна симпатичным узором считается тот, который не содержит в себе квадрата 2х2, состоящего из плиток одного цвета.'''
+
+# tiles = []
+# flag = True
+# for i in range(4):
+#     tiles.append(input())
+#
+# for index_line in range(2):
+#     for index_elem in range(2):
+#         if tiles[index_line][index_elem] == tiles[index_line + 1][index_elem] == \
+#               tiles[index_line][index_elem + 1] == tiles[index_line + 1][index_elem + 1]:
+#             print('No')
+#             flag = False
+#             break
+#     if not flag:
+#         break
+# else:
+#     print('Yes')
+
+'''-------------------------------------'''
+
+'''Требуется написать программу, 
+которая в качестве входных данных использует исходное бинарное черно-белое изображение и 
+полученный Мишиной программой негатив, и на основе этого определяет количество пикселей, в которых допущена ошибка.
+Программа сперва считывает числа n и m (1 ≤ n, m ≤ 100) – высоту и ширину исходного изображения (в пикселях). 
+Последующие n строк содержат описание исходного изображения. 
+Каждая строка состоит из m символов «B» и «W». Символ «B» соответствует черному пикселю, а символ «W» – белому. 
+Далее следует пустая строка, а после нее – описание выведенного Мишиной программой изображения в том же формате, 
+что и исходное изображение.
+Необходимо вывести на экран число пикселей негатива, которые неправильно сформированы Мишиной программой.'''
+
+# line, column = map(int, input().split())
+# old_pixel = []
+# new_pixel = []
+# counter = 0
+#
+# for i in range(line):
+#     old_pixel.append(input())
+# input()
+# for i in range(line):
+#     new_pixel.append(input())
+#
+# for line_index in range(line):
+#     for elem_index in range(column):
+#         if old_pixel[line_index][elem_index] == new_pixel[line_index][elem_index]:
+#             counter += 1
+# print(counter)
+
+'''-------------------------------------'''
+
+'''Дано целое положительное число x. Требуется посчитать количество клеток таблицы, в которых находится число x.
+Входные данные
+В единственной строке находятся числа n и x (1≤n≤105, 1≤x≤109) — размер таблицы и число, которое мы ищем в таблице.
+Выходные данные
+Выведите единственное число: количество раз, которое число x встречается в таблице.'''
+
+# table_size, num_search = map(int, input().split())
+# table = []
+# count = 0
+# for i in range(1, table_size + 1):
+#     line = []
+#     for j in range(1, table_size + 1):
+#         line.append(i*j)
+#     table.append(line)
+#     line = []
+#
+# for line_index in range(table_size):
+#     for elem_index in range(table_size):
+#         if table[line_index][elem_index] == num_search:
+#             count += 1
+#
+# print(count)
+
+'''или так'''
+
+# table_size, num_search = map(int, input().split())
+# count = 0
+# for i in range(1, table_size + 1):
+#     for j in range(1, table_size + 1):
+#         if i * j == num_search:
+#             count += 1
+# print(count)
+
+'''-------------------------------------'''
+
+'''В чемпионате страны участвует n команд и он состоит из n·(n-1) матчей: 
+каждая из команд принимает каждую другую команду на своем стадионе. 
+Манао задумался, а сколько раз в течение одного чемпионата случится, что команда, 
+играющая на своем стадионе, оденет выездную форму? Обратите внимание, 
+что для подсчета этого количества порядок матчей не играет никакого значения.
+Вам даны цвета домашней и выездной формы каждой команды. 
+Для удобства эти цвета пронумерованы целыми числами таким образом, 
+что никакие два разных цвета не имеют одинаковый номер. 
+Помогите Манао найти ответ на его вопрос.'''
+
+# size_table = int(input())
+# form = []
+# count = 0
+#
+# for i in range(size_table):
+#     form.append(list(map(int, input().split())))
+#
+# for line_index in range(size_table - 1):
+#     for elem_index in range(line_index + 1, size_table):
+#         if form[line_index][0] == form[elem_index][1]:
+#             count += 1
+#         if form[line_index][1] == form[elem_index][0]:
+#             count += 1
+# print(count)
+
+'''-------------------------------------'''
+
+'''Ссылка на задачу: https://acmp.ru/asp/do/index.asp?main=task&id_course=1&id_section=8&id_topic=121&id_problem=750'''
+#
+# line, elem = map(int, input().split())
+# field = []
+# count = 0
+#
+# for i in range(line):
+#     field.append(input())
+#
+# for line_index in range(line):
+#     for elem_index in range(elem - 1):
+#         if field[line_index][elem_index] == '.' and field[line_index][elem_index - 1]:
+
+
+
+
 
