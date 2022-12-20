@@ -547,7 +547,6 @@ P.S. не пользуйтесь встроенной функцией sorted и
 (в клетке, которая находится на пересечении третьей строки и третьего столбца). 
 Посчитайте, какое минимальное количество ходов потребуется, чтобы сделать матрицу красивой.'''
 
-
 # arr = []
 # counter_line = -2
 # counter_elem = -2
@@ -677,7 +676,7 @@ P.S. не пользуйтесь встроенной функцией sorted и
 # index_column = 0
 # index_line = 0
 #
- #for i in range(line):
+# for i in range(line):
 #     point.append(list(map(int, input().split())))
 #
 # for line_index in range(line):
@@ -869,19 +868,98 @@ P.S. не пользуйтесь встроенной функцией sorted и
 '''-------------------------------------'''
 
 '''Ссылка на задачу: https://acmp.ru/asp/do/index.asp?main=task&id_course=1&id_section=8&id_topic=121&id_problem=750'''
-#
+
 # line, elem = map(int, input().split())
 # field = []
+# field.append('.' * (elem + 2))
 # count = 0
 #
 # for i in range(line):
-#     field.append(input())
+#     field.append('.' + input() + '.')
+# field.append('.' * (elem + 2))
+#
+# for line_index in range(1, line + 1):
+#     for elem_index in range(1, elem + 1):
+#         if field[line_index - 1][elem_index] == '.' and field[line_index][elem_index + 1] == '.' and \
+#                 field[line_index + 1][elem_index] == '.' and field[line_index][elem_index - 1] == '.' and \
+#                 field[line_index][elem_index] == '.':
+#             count += 1
+# print(count)
+
+'''-------------------------------------'''
+
+'''Даны числа n и m. Создайте массив A[n][m] и заполните его змейкой (см. пример).
+Входные данные
+Программа получает на вход два числа n и m.
+Выходные данные
+Программа должна вывести  полученный массив, при этом между числами может быть любое количество пробелов.'''
+
+# line, column = map(int, input().split())
+# table = []
+# num = 0
+#
+# for i in range(line):
+#     temporary_list = []
+#     for j in range(column):
+#         temporary_list.append(num)
+#         num += 1
+#     table.append(temporary_list)
 #
 # for line_index in range(line):
-#     for elem_index in range(elem - 1):
-#         if field[line_index][elem_index] == '.' and field[line_index][elem_index - 1]:
+#     if line_index % 2 != 0:
+#         table[line_index] = table[line_index][::-1]
+#     print(*table[line_index])
 
+'''-------------------------------------'''
 
+'''Ссылка на задачу: https://codeforces.com/problemset/problem/707/A'''
 
+# line, column = map(int, input().split())
+# foto = []
+# answer = ''
+# for i in range(line):
+#     foto.append(list(input().split()))
+#     for elem in range(column):
+#         answer += foto[i][elem]
+#
+# if 'CMY' in answer:
+#     print('#Color')
+# else:
+#     print('#Black&White')
 
+'''-------------------------------------'''
 
+'''Требуется вывести квадрат, состоящий из N×N клеток, заполненных числами от 1 до N2 по спирали (см. примеры).'''
+
+n = int(input())
+i = 1
+x = 0
+y = -1
+d_row = 0
+d_column = 1
+length = len(str(n ** 2))
+mass = [[0] * n for i in range(n)]
+
+while i <= n ** 2:
+    if 0 <= x + d_row < n and 0 <= y + d_column < n and mass[x + d_row][y + d_column] == 0:
+        x += d_row
+        y += d_column
+        mass[x][y] = i
+        i += 1
+    else:
+        if d_column == 1:
+            d_column = 0
+            d_row = 1
+        elif d_row == 1:
+            d_row = 0
+            d_column = -1
+        elif d_column == -1:
+            d_column = 0
+            d_row = -1
+        elif d_row == -1:
+            d_row = 0
+            d_column = 1
+for row in mass:
+    for elem in row:
+        print(str(elem).rjust(length), end=' ')
+    print()
