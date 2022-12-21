@@ -931,35 +931,87 @@ P.S. не пользуйтесь встроенной функцией sorted и
 
 '''Требуется вывести квадрат, состоящий из N×N клеток, заполненных числами от 1 до N2 по спирали (см. примеры).'''
 
-n = int(input())
-i = 1
-x = 0
-y = -1
-d_row = 0
-d_column = 1
-length = len(str(n ** 2))
-mass = [[0] * n for i in range(n)]
+# n = int(input())
+# i = 1
+# x = 0
+# y = -1
+# d_row = 0
+# d_column = 1
+# length = len(str(n ** 2))
+# mass = [[0] * n for i in range(n)]
+#
+# while i <= n ** 2:
+#     if 0 <= x + d_row < n and 0 <= y + d_column < n and mass[x + d_row][y + d_column] == 0:
+#         x += d_row
+#         y += d_column
+#         mass[x][y] = i
+#         i += 1
+#     else:
+#         if d_column == 1:
+#             d_column = 0
+#             d_row = 1
+#         elif d_row == 1:
+#             d_row = 0
+#             d_column = -1
+#         elif d_column == -1:
+#             d_column = 0
+#             d_row = -1
+#         elif d_row == -1:
+#             d_row = 0
+#             d_column = 1
+# for row in mass:
+#     for elem in row:
+#         print(str(elem).rjust(length), end=' ')
+#     print()
 
-while i <= n ** 2:
-    if 0 <= x + d_row < n and 0 <= y + d_column < n and mass[x + d_row][y + d_column] == 0:
-        x += d_row
-        y += d_column
-        mass[x][y] = i
-        i += 1
-    else:
-        if d_column == 1:
-            d_column = 0
-            d_row = 1
-        elif d_row == 1:
-            d_row = 0
-            d_column = -1
-        elif d_column == -1:
-            d_column = 0
-            d_row = -1
-        elif d_row == -1:
-            d_row = 0
-            d_column = 1
-for row in mass:
-    for elem in row:
-        print(str(elem).rjust(length), end=' ')
-    print()
+'''-------------------------------------'''
+
+'''Тортминатор намерен съесть этот торт! 
+Каждый раз, когда он ест, он выбирает строку или столбец, 
+не содержащие гадкой клубнички, а содержащие по крайней мере одну несъеденную ячейку торта. 
+Затем Тортминатор поедает все выбранные им ячейки торта. Тортминатор может есть сколько угодно раз.
+Пожалуйста, выведите максимальное количество ячеек, которые может съесть Тортминатор.'''
+
+# line, column = map(int, input().split())
+# tort = []
+# truefalse_mas = [[False] * column for i in range(line)]
+# counter = 0
+#
+# for i in range(line):
+#     tort.append(list(input()))
+#
+# for line_index in range(line):
+#     if 'S' not in tort[line_index]:
+#         for elem_index in range(column):
+#             truefalse_mas[line_index][elem_index] = True
+#
+# for column_index in range(column):
+#     is_find = False
+#     for elem_index in range(line):
+#         if tort[elem_index][column_index] == 'S':
+#             is_find = True
+#             break
+#     if not is_find:
+#         for i in range(line):
+#             truefalse_mas[i][column_index] = True
+#
+# for i in truefalse_mas:
+#     counter += i.count(True)
+# print(counter)
+
+'''-------------------------------------'''
+
+'''Программа принимает на вход два целых числа a и b.
+Если a<=b необходимо сформировать список квадратов целых чисел на интервале от а до b включительно и вывести его на экран.
+Если же a>b, необходимо сформировать список кубов целых чисел на интервале от a до b включительно, 
+двигаясь в порядке убывания, и затем вывести его.'''
+
+# a, b = map(int, input().split())
+# print([i**2 for i in range(a, b + 1)] or [i**3 for i in range(a, b - 1, -1)])
+
+'''-------------------------------------'''
+
+'''Создайте список первых букв каждого слова из строки st и выведите его на экран'''
+
+# st = 'Create a list of the first letters of every word in this string'
+# print([i[0] for i in st.split()])
